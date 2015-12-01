@@ -1,0 +1,70 @@
+
+
+<br/><br/><br/>
+<br/><br/><br/>
+<div class="lc-block toggled" id="l-register">
+
+    <form name="registerForm" ng-submit="vm.register()" novalidate>
+
+        <div class="input-group m-b-20">
+            <span class="input-group-addon">
+                <i class="zmdi zmdi-account"></i>
+            </span>
+            <div class="fg-line">
+                <input type="text"
+                       class="form-control"
+                       name="username"
+                       placeholder="Nome de usuário"
+                       ng-required="true"
+                       ng-model="vm.formData.username" />
+            </div>
+        </div>
+
+        <div class="input-group m-b-20">
+            <span class="input-group-addon">
+                <i class="zmdi zmdi-account"></i>
+            </span>
+            <div class="fg-line">
+                <input type="name"
+                       class="form-control"
+                       name="name"
+                       placeholder="Nome"
+                       ng-required="true"
+                       ng-model="vm.formData.profile.name" />
+            </div>
+        </div>
+
+        <div class="input-group m-b-20">
+            <span class="input-group-addon">
+                <i class="zmdi zmdi-male"></i>
+            </span>
+            <div class="fg-line">
+                <input type="password"
+                       class="form-control"
+                       name="password"
+                       placeholder="Senha"
+                       ng-required="true"
+                       ng-model="vm.formData.password" />
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" ng-model="vm.accept">
+                <i class="input-helper"></i>
+                Aceito os termos de uso
+            </label>
+        </div>
+      <button
+         type="submit"
+         class="btn btn-login btn-danger btn-float"
+         ng-disabled="registerForm.$invalid || !vm.accept">
+              <i class="zmdi zmdi-arrow-forward"></i>
+      </button>
+    </form>
+
+    <ul class="login-navigation">
+        <li class="bgm-green" data-ui-sref="auth.login">Autenticar</li>
+    </ul>
+</div>

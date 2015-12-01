@@ -1,0 +1,59 @@
+
+<br/><br/><br/>
+<br/><br/><br/>
+<!-- Login -->
+<div class="lc-block toggled" id="l-login">
+
+    <div ng-if="vm.error" class="alert alert-danger">
+      {{ vm.error }}
+    </div>
+
+    <form name="loginForm" ng-submit="vm.login()" novalidate>
+        <!-- USERNAME -->
+        <div class="input-group m-b-20">
+            <span class="input-group-addon"><i class="zmdi zmdi-account"></i></span>
+            <div class="fg-line">
+                <input type="text"
+                       name="username"
+                       class="form-control"
+                       placeholder="Nome de usuário"
+                       ng-model="vm.credentials.username"
+                       ng-required="true">
+            </div>
+        </div>
+
+        <!-- PASSWORD -->
+        <div class="input-group m-b-20">
+            <span class="input-group-addon"><i class="zmdi zmdi-male"></i></span>
+            <div class="fg-line">
+                <input type="password"
+                       name="password"
+                       class="form-control"
+                       placeholder="Senha"
+                       ng-model="vm.credentials.password"
+                       ng-required="true">
+            </div>
+        </div>
+      <div class="clearfix"></div>
+
+      <!-- <div class="checkbox">
+          <label>
+              <input type="checkbox" value="">
+              <i class="input-helper"></i>
+              Keep me signed in
+          </label>
+      </div> -->
+
+      <button
+         type="submit"
+         class="btn btn-login btn-danger btn-float"
+         ng-disabled="loginForm.$invalid">
+              <i class="zmdi zmdi-arrow-forward"></i>
+      </button>
+    </form>
+
+    <ul class="login-navigation">
+        <li class="bgm-red" ui-sref="auth.register">Cadastrar-se</li>
+        <!-- <li data-block="#l-forget-password" class="bgm-orange" data-ng-click="lctrl.login = 0; lctrl.forgot = 1">Forgot Password?</li> -->
+    </ul>
+</div>

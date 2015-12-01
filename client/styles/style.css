@@ -1,0 +1,13 @@
+.login-navigation > li {
+  min-width: 36px;
+  min-height: 36px;
+}
+.login-navigation > li:not(:hover) {
+  font-size: 0px;
+  border-radius: 100%;
+}
+.login-navigation > li:hover {
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 20px;
+}

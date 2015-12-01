@@ -1,0 +1,47 @@
+
+<div class="container col-xs-10 col-xs-offset-1">
+
+    <div class="card m-b-0" id="messages-main">
+        <a href="" class="btn bgm-red btn-float" id="ms-compose">
+            <i class="zmdi zmdi-plus"></i>
+        </a>
+        <div class="ms-menu toggled" id="list-chats">
+            <div class="ms-block">
+                <div class="ms-user">
+                    <img src="img/profile-pics/4.jpg" alt="">
+                    <div>Signed in as {{ coreCtrl.getUsername() }}</div>
+                </div>
+            </div>
+
+            <div class="ms-block">
+                <div class="dropdown" dropdown>
+                    <a class="btn btn-primary btn-block" href="" dropdown-toggle>Menu <i class="caret m-l-5"></i></a>
+
+                    <ul class="dropdown-menu dm-icon w-100">
+                        <li><a ui-sref="chats.index"><i class="zmdi zmdi-home"></i> Inicio</a></li>
+                        <li><a href=""><i class="zmdi zmdi-format-list-bulleted"></i> Histórico de casos</a></li>
+                        <li><a href="javascript:void(0)" ng-click="coreCtrl.logout()"><i class="zmdi zmdi-power"> </i>Sair</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="listview lv-user m-t-20" ng-controller="ChatsCtrl as chatsCtrl">
+                
+                <div class="lv-item media"
+                     ng-repeat="chat in chatsCtrl.chats"
+                     ng-class="{'active': chatsCtrl.isActive(chat)}"
+                     ng-click="chatsCtrl.show(chat)">
+
+                    <div class="lv-avatar pull-left">
+                        <div class="lv-avatar bgm-red pull-left">{{ ::chat.contact().name[0] }}</div>
+                    </div>
+                    <div class="media-body">
+                        <div class="lv-title">{{ ::chat.contact().name }}</div>
+                        <div class="lv-small">Fierent fastidii recteque ad pro</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ms-body" ui-view></div>
+    </div>
+</div>
